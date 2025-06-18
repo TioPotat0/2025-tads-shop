@@ -1,5 +1,6 @@
 "use client";
 
+import { deletarMarca } from "@/actions/marcas-action";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -42,7 +43,7 @@ export function MarcasList({ marcas }: MarcasListProps) {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <Button size="icon" variant="destructive">
+                  <Button action={deletarMarca} size="icon" variant="destructive">
                     <Trash />
                   </Button>
                 </div>
