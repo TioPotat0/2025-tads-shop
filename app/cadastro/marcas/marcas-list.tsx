@@ -1,4 +1,4 @@
-"use client";
+
 
 import { deletarMarca } from "@/actions/marcas-action";
 import { Button } from "@/components/ui/button";
@@ -13,16 +13,13 @@ import {
 import { Marca } from "@/models/marcas";
 import { Edit, Trash } from "lucide-react";
 
-type MarcasListProps = {
-  marcas: Marca[]
-}
+export async function MarcasList() {
+ // await new Promise((resolve) => {setTimeout(resolve, 3000)}); 
+  const response = await fetch("http://localhost:3002/marcas", {
 
-
-
-
-
-export function MarcasList({ marcas }: MarcasListProps) {
-
+    cache: "no-store",
+  })
+  const marcas:Marca[] = await response.json();
   return (
     <section className="mt-8 rounded-md border">
       <Table>
