@@ -52,5 +52,25 @@
       "id": "1704",
       "nome": "galonha"
     }
+  ],
+  "grupos": [
+    {
+      "id": "1",
+      "nome": "Eletronicos",
+      "subGrupos": [
+        {
+          "id": "1",
+          "nome": "Celulares"
+        },
+        {
+          "id": "2",
+          "nome": "Computadores"
+        },
+        {
+          "id": "3",
+          "nome": "Televisores"
+        }
+      ]
+    }
   ]
 }

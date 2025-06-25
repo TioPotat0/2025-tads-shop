@@ -1,0 +1,42 @@
+'use client';
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { Button } from "./ui/button";
+import { deletarMarca } from "@/actions/marcas-action";
+import { Trash } from "lucide-react";
+
+export function DeleteButton(){
+    return(
+         <AlertDialog>
+      <AlertDialogTrigger asChild>
+       <Button size="icon" variant="destructive">
+                    
+                    <Trash />
+                  </Button>
+                  
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Você está excluindo uma Marca, você tem certeza?</AlertDialogTitle>
+          <AlertDialogDescription>
+            Se você excluir este item, não poderá desfazer essa ação. Esta ação é permanente e não pode ser desfeita.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancelar</AlertDialogCancel>
+          <AlertDialogAction>Continuar</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+    )
+}

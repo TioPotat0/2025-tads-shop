@@ -1,6 +1,7 @@
 
 
 import { deletarMarca } from "@/actions/marcas-action";
+import { DeleteButton } from "@/components/delete-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -11,7 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Marca } from "@/models/marcas";
-import { Edit, Trash } from "lucide-react";
+import { Edit} from "lucide-react";
 
 export async function MarcasList() {
  // await new Promise((resolve) => {setTimeout(resolve, 3000)}); 
@@ -40,9 +41,7 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <Button action={deletarMarca} size="icon" variant="destructive">
-                    <Trash />
-                  </Button>
+                 <DeleteButton/>
                 </div>
               </TableCell>
             </TableRow>

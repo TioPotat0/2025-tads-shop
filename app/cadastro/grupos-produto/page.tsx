@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { GruposProdutoList } from "./grupos-produto-list";
 import Link from "next/link";
+import { Suspense } from "react";
 export default function PageGruposProduto() {
   return (
     <section className="p-8">
@@ -22,7 +23,9 @@ export default function PageGruposProduto() {
           </Button>
         </Link>
       </div>
-      <GruposProdutoList />
+       
+            <GruposProdutoList />
+            
     </section>
   );
 }
