@@ -1,4 +1,4 @@
-"use client";
+'use server'
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,16 +12,17 @@ import {
 import { Delete, Edit, Trash } from "lucide-react";
 import { Grupos } from "@/models/grupos-produto";
 import { DeleteButton } from "@/components/delete-button";
- const response = await fetch("http://localhost:3002/grupos-produto", {
+
+
+export async function GruposProdutoList() {
+   const response = await fetch("http://localhost:3004/grupos", {
 
     cache: "no-store",
   })
-    const grupos:Grupos[] = await response.json();
-
-export function GruposProdutoList() {
+    const grupo:Grupos[] = await response.json();
   return (
     <section className="mt-8 rounded-md border">
-      <Table>
+      <Table> 
         <TableHeader>
           <TableRow>
             <TableHead className="w-10">ID</TableHead>
@@ -31,11 +32,11 @@ export function GruposProdutoList() {
           </TableRow>
         </TableHeader>
         <TableBody>
-      {grupos.map((grupos) => (
-          <TableRow key={grupos.id}>
-            <TableCell className="font-medium">{grupos.id}</TableCell>
-            <TableCell>{grupos.nome}</TableCell>
-            <TableCell>{grupos.subGrupos}</TableCell>
+      {grupo.map((grupo) => (
+          <TableRow key={grupo.id}>
+            <TableCell className="font-medium">{grupo.id}</TableCell>
+            <TableCell>{grupo.nome}</TableCell>
+            <TableCell>{grupo.subgrupo}</TableCell>
             <TableCell>
               <div className="flex gap-2">
                 <Button size="icon">

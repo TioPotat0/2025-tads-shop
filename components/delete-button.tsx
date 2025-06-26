@@ -27,7 +27,7 @@ export function DeleteButton(){
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Você está excluindo uma Marca, você tem certeza?</AlertDialogTitle>
+          <AlertDialogTitle>Você está excluindo um item, você tem certeza?</AlertDialogTitle>
           <AlertDialogDescription>
             Se você excluir este item, não poderá desfazer essa ação. Esta ação é permanente e não pode ser desfeita.
           </AlertDialogDescription>

@@ -57,20 +57,31 @@
     {
       "id": "1",
       "nome": "Eletronicos",
-      "subGrupos": [
-        {
-          "id": "1",
-          "nome": "Celulares"
-        },
-        {
-          "id": "2",
-          "nome": "Computadores"
-        },
-        {
-          "id": "3",
-          "nome": "Televisores"
-        }
-      ]
+      "subGrupos": "Televisores"
+    },
+    {
+      "id": "2",
+      "nome": "Cigarros",
+      "subGrupos": "Tabaco"
+    },
+    {
+      "id": "0619",
+      "nome": "Macarrão"
+    },
+    {
+      "id": "72e1",
+      "nome": "",
+      "subgrupo": "banana"
+    },
+    {
+      "id": "c945",
+      "nome": "Macarrão",
+      "subgrupo": "banana"
+    },
+    {
+      "id": "7281",
+      "nome": "Macarrão22222",
+      "subgrupo": "Opção 3"
     }
   ]
 }

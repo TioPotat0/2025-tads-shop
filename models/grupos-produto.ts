@@ -1,5 +1,7 @@
+
+
 export type Grupos = {
     id:number;
     nome:string;
-    subGrupos: string[];
+    subgrupo: String;
 }
