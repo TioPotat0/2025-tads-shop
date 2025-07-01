@@ -1,4 +1,4 @@
-
+'use server'
 
 import { deletarMarca } from "@/actions/marcas-action";
 import { DeleteButton } from "@/components/delete-button";
@@ -16,7 +16,7 @@ import { Edit} from "lucide-react";
 
 export async function MarcasList() {
  // await new Promise((resolve) => {setTimeout(resolve, 3000)}); 
-  const response = await fetch("http://localhost:3002/marcas", {
+  const response = await fetch(`${process.env.API_URL}/marca`, {
 
     cache: "no-store",
   })
@@ -41,7 +41,10 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                 <DeleteButton/>
+                  
+                     <DeleteButton id={marcas.id}/>
+           
+                
                 </div>
               </TableCell>
             </TableRow>

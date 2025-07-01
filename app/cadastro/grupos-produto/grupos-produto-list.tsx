@@ -15,7 +15,7 @@ import { DeleteButton } from "@/components/delete-button";
 
 
 export async function GruposProdutoList() {
-   const response = await fetch("http://localhost:3004/grupos", {
+   const response = await fetch(`${process.env.API_URL}/subgrupo`, {
 
     cache: "no-store",
   })
@@ -42,7 +42,7 @@ export async function GruposProdutoList() {
                 <Button size="icon">
                   <Edit />
                 </Button>
-                <DeleteButton/>
+                <DeleteButton  id={grupo.id}/>
               </div>
             </TableCell>
           </TableRow>

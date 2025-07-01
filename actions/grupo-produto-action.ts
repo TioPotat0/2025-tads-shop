@@ -2,8 +2,10 @@
 
 import { redirect } from "next/navigation"
 
+const API_URL = process.env.API_URL
+
 export async function criargrupos(formData:FormData){
-  let response = await fetch('http://localhost:3004/grupos', {
+  let response = await fetch(`${process.env.API_URL}/subgrupo`, {
     method: 'POST',
     body: JSON.stringify({
     nome: formData.get('nome'), subgrupo: formData.get('subgrupo')
@@ -13,7 +15,7 @@ export async function criargrupos(formData:FormData){
     redirect('/cadastro/grupos-produto')
   }
 export async function deletargrupos(formData:FormData) {
-    let response = await fetch(`http://localhost:3004/grupos/${formData.get('id')}`, {
+    let response = await fetch(`${process.env.API_URL}/marca/${formData.get('id')}`, {
         method: 'DELETE',
         body: JSON.stringify({
         nome: formData.get('id')

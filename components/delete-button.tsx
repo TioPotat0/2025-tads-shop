@@ -15,14 +15,28 @@ import { Button } from "./ui/button";
 import { deletarMarca } from "@/actions/marcas-action";
 import { Trash } from "lucide-react";
 
-export function DeleteButton(){
+type DeleteButtonProps = {
+  id: number;
+
+}
+
+export function DeleteButton({id}: DeleteButtonProps) {
+
+  const handleDelete = async () => {
+    deletarMarca(id)
+  }
     return(
-         <AlertDialog>
+         <AlertDialog>  
       <AlertDialogTrigger asChild>
+        
        <Button size="icon" variant="destructive">
-                    
+                
+                  
+                  
+
                     <Trash />
                   </Button>
+                  
                   
       </AlertDialogTrigger>
       <AlertDialogContent>
@@ -34,7 +48,9 @@ export function DeleteButton(){
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
-          <AlertDialogAction>Continuar</AlertDialogAction>
+          <AlertDialogAction asChild>
+            <Button variant="destructive" size="icon" onClick={handleDelete}>Excluir</Button>
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
