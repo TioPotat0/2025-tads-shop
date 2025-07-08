@@ -14,6 +14,7 @@ import {
 import { Button } from "./ui/button";
 import { deletarMarca } from "@/actions/marcas-action";
 import { Trash } from "lucide-react";
+import { toast } from "sonner";
 
 type DeleteButtonProps = {
   id: number;
@@ -23,7 +24,12 @@ type DeleteButtonProps = {
 export function DeleteButton({id}: DeleteButtonProps) {
 
   const handleDelete = async () => {
-    deletarMarca(id)
+    const {sucesso,mensagem} = await deletarMarca(id)
+    if(sucesso){
+     toast.success(mensagem)
+    }else{
+      toast.error(mensagem)
+    }
   }
     return(
          <AlertDialog>  

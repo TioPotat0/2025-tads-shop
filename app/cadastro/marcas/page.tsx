@@ -6,8 +6,9 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 
+
 export default function PageMarcas() {
-    
+   
   return (
     <section className="p-8">
       <div className="flex items-center justify-between">
