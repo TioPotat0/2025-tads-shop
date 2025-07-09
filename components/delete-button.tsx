@@ -17,7 +17,7 @@ import { Trash } from "lucide-react";
 import { toast } from "sonner";
 
 type DeleteButtonProps = {
-  id: number;
+  id: string;
 
 }
 

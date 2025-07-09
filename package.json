@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "npx json-server --watch db/data.json --port 3004"
+    "server": "npx json-server --watch db/data.json --port 3002"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.14",

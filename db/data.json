@@ -1,12 +1,8 @@
 {
   "marcas": [
     {
-      "id": "1",
-      "nome": "Samsung"
-    },
-    {
       "id": "2",
-      "nome": "Apple"
+      "nome": "Apple 2222"
     },
     {
       "id": "3",
@@ -47,10 +43,6 @@
     {
       "id": "e689",
       "nome": "alou2"
-    },
-    {
-      "id": "1704",
-      "nome": "galonha"
     }
   ],
   "grupos": [

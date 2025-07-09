@@ -13,10 +13,11 @@ import {
 } from "@/components/ui/table";
 import { Marca } from "@/models/marcas";
 import { Edit} from "lucide-react";
+import Link from "next/link";
 
 export async function MarcasList() {
  // await new Promise((resolve) => {setTimeout(resolve, 3000)}); 
-  const response = await fetch(`${process.env.API_URL}/marca`, {
+  const response = await fetch(`${process.env.API_URL}/marcas`, {
 
     cache: "no-store",
   })
@@ -38,8 +39,9 @@ export async function MarcasList() {
               <TableCell>{marcas.nome}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
-                  <Button size="icon">
-                    <Edit />
+                  <Button size="icon" asChild>
+                    <Link href={`/cadastro/marcas/editar/${marcas.id}`}><Edit /></Link>
+                  
                   </Button>
                   
                      <DeleteButton id={marcas.id}/>

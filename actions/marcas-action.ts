@@ -16,7 +16,7 @@ export type MarcaFormState = {
 }
 
 export async function criarMarca(prevState: MarcaFormState, formData: FormData) {
-  let response = await fetch(`${API_URL}/marca`, {
+  let response = await fetch(`${API_URL}/marcas`, {
     headers,
     method: 'POST',
     body: stringifyFormData(formData)
@@ -27,7 +27,22 @@ export async function criarMarca(prevState: MarcaFormState, formData: FormData) 
   return prevState
   redirect('/cadastro/marcas')
 }
-export async function deletarMarca(id: number) {
+
+export async function editarMarca(prevState: MarcaFormState, formData: FormData) {
+  const id = formData.get('id')
+  let response = await fetch(`${API_URL}/marcas/${id}`, {
+    headers,
+    method: 'PUT',
+    body: stringifyFormData(formData)
+
+  })
+  // console.log(await response.json())
+  await new Promise((resolve) => { setTimeout(resolve, 3000) });
+  return prevState
+  redirect('/cadastro/marcas')
+}
+
+export async function deletarMarca(id: string) {
   let response = await fetch(`${API_URL}/marcas/${id}`, {
     method: 'DELETE',
 
