@@ -25,7 +25,7 @@ export function MarcasForm({marca}: MarcasFormProps) {
   return (
     <section className="mt-8">
       <form action={formAction} className="max-w-2xl">
-        <input type="hidden" name="id" defaultValue={marca?.id} />
+        {marca ? <input type="hidden" name="id" defaultValue={marca?.id} />: null}
         <div className="space-y-4">
           <Label htmlFor="nome">Nome</Label>
           <Input name="nome" defaultValue={marca?.nome} />
